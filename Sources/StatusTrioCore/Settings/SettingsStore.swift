@@ -4,7 +4,7 @@ import Foundation
 @MainActor
 final class SettingsStore: ObservableObject {
     static let iconSizeRange: ClosedRange<Double> = 16...36
-    static let defaultIconSize: Double = 28
+    static let defaultIconSize: Double = 24
     static let iconSizeDefaultsKey = "menuBarIconSize"
 
     static let batteryCriticalThresholdRange: ClosedRange<Double> = 0...100
@@ -22,7 +22,7 @@ final class SettingsStore: ObservableObject {
     static let showsWiFiIconForTemporaryConnectionDefaultsKey = "showsWiFiIconForTemporaryConnection"
     static let showsWiFiIconForInternetSharingDefaultsKey = "showsWiFiIconForInternetSharing"
     static let wifiSymbolScaleRange: ClosedRange<Double> = 1.0...1.8
-    static let defaultWifiSymbolScale: Double = 1.0
+    static let defaultWifiSymbolScale: Double = 1.6
     static let wifiSymbolScaleDefaultsKey = "wifiSymbolScale"
     static let defaultVolumeDisplayStyle: VolumeDisplayStyle = .dots
     static let volumeDisplayStyleDefaultsKey = "volumeDisplayStyle"

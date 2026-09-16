@@ -10,7 +10,7 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertEqual(SettingsStore.iconSizeRange, 16...36)
 
         let store = SettingsStore(defaults: makeSuite().defaults)
-        XCTAssertEqual(store.iconSize, 28, accuracy: 0.001)
+        XCTAssertEqual(store.iconSize, 24, accuracy: 0.001)
     }
 
     func testConnectedPowerPercentageDefaultsOffAndFeedsTheIconOptions() {
@@ -95,7 +95,10 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertFalse(store.showsWiFiIconForHotspot)
         XCTAssertFalse(store.showsWiFiIconForTemporaryConnection)
         XCTAssertFalse(store.showsWiFiIconForInternetSharing)
-        XCTAssertEqual(store.connectionIconOptions, .standard)
+        XCTAssertEqual(
+            store.connectionIconOptions,
+            ConnectionIconOptions(wifiScale: SettingsStore.defaultWifiSymbolScale)
+        )
     }
 
     func testConnectionIconDisplaySettingsPersistAcrossStoreInstances() {
@@ -119,7 +122,7 @@ final class SettingsStoreTests: XCTestCase {
         let store = SettingsStore(defaults: makeSuite().defaults)
 
         XCTAssertEqual(SettingsStore.wifiSymbolScaleRange, 1.0...1.8)
-        XCTAssertEqual(store.wifiSymbolScale, 1.0, accuracy: 0.001)
+        XCTAssertEqual(store.wifiSymbolScale, 1.6, accuracy: 0.001)
 
         store.wifiSymbolScale = 2.5
         XCTAssertEqual(store.wifiSymbolScale, 1.8, accuracy: 0.001)
@@ -249,13 +252,13 @@ final class SettingsStoreTests: XCTestCase {
         defer { clear(suite) }
         suite.defaults.set("huge", forKey: SettingsStore.iconSizeDefaultsKey)
 
-        XCTAssertEqual(SettingsStore(defaults: suite.defaults).iconSize, 28, accuracy: 0.001)
+        XCTAssertEqual(SettingsStore(defaults: suite.defaults).iconSize, 24, accuracy: 0.001)
     }
 
     func testClampHelperRejectsNonFiniteValues() {
-        XCTAssertEqual(SettingsStore.clampedIconSize(.nan), 28, accuracy: 0.001)
-        XCTAssertEqual(SettingsStore.clampedIconSize(.infinity), 28, accuracy: 0.001)
-        XCTAssertEqual(SettingsStore.clampedIconSize(-.infinity), 28, accuracy: 0.001)
+        XCTAssertEqual(SettingsStore.clampedIconSize(.nan), 24, accuracy: 0.001)
+        XCTAssertEqual(SettingsStore.clampedIconSize(.infinity), 24, accuracy: 0.001)
+        XCTAssertEqual(SettingsStore.clampedIconSize(-.infinity), 24, accuracy: 0.001)
         XCTAssertEqual(SettingsStore.clampedBatterySymbolScale(.nan), 1, accuracy: 0.001)
         XCTAssertEqual(SettingsStore.clampedBatterySymbolScale(.infinity), 1, accuracy: 0.001)
     }
@@ -268,7 +271,7 @@ final class SettingsStoreTests: XCTestCase {
         store.iconSize = 21
 
         withExtendedLifetime(cancellable) {
-            XCTAssertEqual(received, [28, 21])
+            XCTAssertEqual(received, [24, 21])
         }
     }
 
