@@ -668,7 +668,7 @@ final class StatusIconRendererTests: XCTestCase {
         )
         let twoBars = StatusSnapshot(
             battery: .placeholder,
-            wifi: WiFiStatus(state: .connected, rssi: -70),
+            wifi: WiFiStatus(state: .connected, rssi: -75),
             volume: .placeholder
         )
         let threeBars = StatusSnapshot(
@@ -685,7 +685,7 @@ final class StatusIconRendererTests: XCTestCase {
     }
 
     func testConnectedNonzeroSignalAlphaSumIncreasesWithBars() throws {
-        let rssiValues: [Int?] = [-85, -70, -55]
+        let rssiValues: [Int?] = [-85, -75, -55]
         let signalRegion = CGRect(x: 35, y: 43, width: 50, height: 43)
         var alphaSums: [Int] = []
 

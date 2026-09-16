@@ -227,7 +227,7 @@ struct WiFiNetworkListView: View {
                         .foregroundStyle(.secondary)
                         .accessibilityHidden(true)
                 }
-                Image(systemName: signalSymbol(for: network.rssi))
+                networkSignalIcon(for: network.rssi)
                     .foregroundStyle(.secondary)
                     .accessibilityHidden(true)
             }
@@ -246,12 +246,17 @@ struct WiFiNetworkListView: View {
         ssid.isEmpty ? localization.string(.wifiHiddenNetwork) : ssid
     }
 
-    private func signalSymbol(for rssi: Int?) -> String {
-        guard let rssi else { return "wifi.exclamationmark" }
-        return switch StatusMappings.wifiBars(rssi: rssi) {
-        case 0: "wifi.exclamationmark"
-        case 1: "wifi"
-        default: "wifi"
+    @ViewBuilder
+    private func networkSignalIcon(for rssi: Int?) -> some View {
+        if let rssi {
+            let bars = StatusMappings.wifiBars(rssi: rssi)
+            if bars == 0 {
+                Image(systemName: "wifi.exclamationmark")
+            } else {
+                Image(systemName: "wifi", variableValue: max(0.25, Double(bars) / 3.0))
+            }
+        } else {
+            Image(systemName: "wifi.exclamationmark")
         }
     }
 

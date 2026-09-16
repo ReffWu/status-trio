@@ -3,13 +3,13 @@ import XCTest
 
 final class StatusMappingsTests: XCTestCase {
     func testWiFiSignalBoundaries() {
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -54), 3)
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -55), 3)
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -56), 2)
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -70), 2)
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -71), 1)
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -85), 1)
-        XCTAssertEqual(StatusMappings.wifiBars(rssi: -86), 0)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -71), 3)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -72), 3)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -73), 2)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -82), 2)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -83), 1)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -90), 1)
+        XCTAssertEqual(StatusMappings.wifiBars(rssi: -91), 0)
         XCTAssertEqual(StatusMappings.wifiBars(rssi: nil), 0)
     }
 
