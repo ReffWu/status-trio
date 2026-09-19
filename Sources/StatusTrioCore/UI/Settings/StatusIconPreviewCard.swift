@@ -14,26 +14,22 @@ struct StatusIconPreviewCard: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            ZStack(alignment: .trailing) {
-                MenuBarPreviewBar(
-                    status: MenuBarStatus(snapshot: statusStore.snapshot),
-                    iconSize: store.iconSize,
-                    batteryOptions: store.batteryIconOptions,
-                    connectionOptions: store.connectionIconOptions,
-                    volumeOptions: store.volumeIconOptions,
-                    bluetoothAudioOptions: store.bluetoothAudioIconOptions,
-                    isDarkBackground: isDarkBackground,
-                    trailingInset: 104
-                )
-                .animation(.easeInOut(duration: 0.15), value: store.iconSize)
-                .animation(.easeInOut(duration: 0.15), value: store.batteryIconOptions)
-                .animation(.easeInOut(duration: 0.15), value: store.connectionIconOptions)
-                .animation(.easeInOut(duration: 0.15), value: store.volumeIconOptions)
-                .animation(.easeInOut(duration: 0.15), value: store.bluetoothAudioIconOptions)
-
+            MenuBarPreviewBar(
+                status: MenuBarStatus(snapshot: statusStore.snapshot),
+                iconSize: store.iconSize,
+                batteryOptions: store.batteryIconOptions,
+                connectionOptions: store.connectionIconOptions,
+                volumeOptions: store.volumeIconOptions,
+                bluetoothAudioOptions: store.bluetoothAudioIconOptions,
+                isDarkBackground: isDarkBackground
+            ) {
                 appearanceToggle
-                    .padding(.trailing, 14)
             }
+            .animation(.easeInOut(duration: 0.15), value: store.iconSize)
+            .animation(.easeInOut(duration: 0.15), value: store.batteryIconOptions)
+            .animation(.easeInOut(duration: 0.15), value: store.connectionIconOptions)
+            .animation(.easeInOut(duration: 0.15), value: store.volumeIconOptions)
+            .animation(.easeInOut(duration: 0.15), value: store.bluetoothAudioIconOptions)
 
             Text(localization.string(.settingsPreviewHint))
                 .font(.system(size: 11))

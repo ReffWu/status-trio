@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 /// Reusable menu bar simulation used by Settings and the icon guide.
-struct MenuBarPreviewBar: View {
+struct MenuBarPreviewBar<TrailingAccessory: View>: View {
     let status: MenuBarStatus
     var iconSize: CGFloat = 24
     var batteryOptions: BatteryIconOptions = .standard
@@ -12,7 +12,31 @@ struct MenuBarPreviewBar: View {
     var isDarkBackground = true
     var highlightedPart: IconGuidePart?
     var highlightOpacity: Double = 1
-    var trailingInset: CGFloat = 0
+    @ViewBuilder var trailingAccessory: () -> TrailingAccessory
+
+    init(
+        status: MenuBarStatus,
+        iconSize: CGFloat = 24,
+        batteryOptions: BatteryIconOptions = .standard,
+        connectionOptions: ConnectionIconOptions = .standard,
+        volumeOptions: VolumeIconOptions = .standard,
+        bluetoothAudioOptions: BluetoothAudioIconOptions = .standard,
+        isDarkBackground: Bool = true,
+        highlightedPart: IconGuidePart? = nil,
+        highlightOpacity: Double = 1,
+        @ViewBuilder trailingAccessory: @escaping () -> TrailingAccessory
+    ) {
+        self.status = status
+        self.iconSize = iconSize
+        self.batteryOptions = batteryOptions
+        self.connectionOptions = connectionOptions
+        self.volumeOptions = volumeOptions
+        self.bluetoothAudioOptions = bluetoothAudioOptions
+        self.isDarkBackground = isDarkBackground
+        self.highlightedPart = highlightedPart
+        self.highlightOpacity = highlightOpacity
+        self.trailingAccessory = trailingAccessory
+    }
 
     var body: some View {
         ZStack {
@@ -50,9 +74,12 @@ struct MenuBarPreviewBar: View {
                 .accessibilityHidden(true)
 
                 rightContext
+
+                if TrailingAccessory.self != EmptyView.self {
+                    trailingAccessory()
+                }
             }
             .padding(.horizontal, 14)
-            .padding(.trailing, trailingInset)
         }
         .frame(height: 40)
     }
@@ -96,6 +123,33 @@ struct MenuBarPreviewBar: View {
             isDarkBackground
                 ? Color.white.opacity(0.65)
                 : Color.black.opacity(0.65)
+        )
+    }
+}
+
+extension MenuBarPreviewBar where TrailingAccessory == EmptyView {
+    init(
+        status: MenuBarStatus,
+        iconSize: CGFloat = 24,
+        batteryOptions: BatteryIconOptions = .standard,
+        connectionOptions: ConnectionIconOptions = .standard,
+        volumeOptions: VolumeIconOptions = .standard,
+        bluetoothAudioOptions: BluetoothAudioIconOptions = .standard,
+        isDarkBackground: Bool = true,
+        highlightedPart: IconGuidePart? = nil,
+        highlightOpacity: Double = 1
+    ) {
+        self.init(
+            status: status,
+            iconSize: iconSize,
+            batteryOptions: batteryOptions,
+            connectionOptions: connectionOptions,
+            volumeOptions: volumeOptions,
+            bluetoothAudioOptions: bluetoothAudioOptions,
+            isDarkBackground: isDarkBackground,
+            highlightedPart: highlightedPart,
+            highlightOpacity: highlightOpacity,
+            trailingAccessory: { EmptyView() }
         )
     }
 }
