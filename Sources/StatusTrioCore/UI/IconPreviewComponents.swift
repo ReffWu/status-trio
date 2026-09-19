@@ -12,7 +12,10 @@ struct MenuBarPreviewBar<TrailingAccessory: View>: View {
     var isDarkBackground = true
     var highlightedPart: IconGuidePart?
     var highlightOpacity: Double = 1
-    @ViewBuilder var trailingAccessory: () -> TrailingAccessory
+    /// Rendered after `rightContext` inside the same `HStack`, so a caller's
+    /// control takes part in the bar's standard 14 pt element spacing instead of
+    /// needing a reserved trailing inset that its localized width cannot match.
+    var trailingAccessory: () -> TrailingAccessory
 
     init(
         status: MenuBarStatus,
@@ -75,6 +78,10 @@ struct MenuBarPreviewBar<TrailingAccessory: View>: View {
 
                 rightContext
 
+                // The no-accessory initializer has to stay layout-neutral on
+                // every supported macOS release, and a stack's spacing for
+                // `EmptyView` is not a documented guarantee, so the `EmptyView`
+                // specialization contributes no stack child at all.
                 if TrailingAccessory.self != EmptyView.self {
                     trailingAccessory()
                 }
@@ -127,6 +134,8 @@ struct MenuBarPreviewBar<TrailingAccessory: View>: View {
     }
 }
 
+/// A bar with no trailing accessory, for callers such as the icon guide that
+/// only simulate the menu bar itself.
 extension MenuBarPreviewBar where TrailingAccessory == EmptyView {
     init(
         status: MenuBarStatus,
