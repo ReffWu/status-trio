@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "repo": "ReffWu/status-trio",
+  "fetched_at": "2026-09-25T08:50:00Z",
+  "window_days": 14,
+  "windows": {},
+  "referrers": [],
+  "paths": [],
+  "releases": [
+    {
+      "tag_name": "v1.1.0",
+      "name": "StatusTrio v1.1.0 - 现代化人本设置页 & Wi-Fi 信号轨重构",
+      "published_at": "2026-09-15T23:29:04Z",
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "StatusTrio.zip",
+          "download_count": 4,
+          "size": 2004921
+        }
+      ]
+    }
+  ],
+  "errors": {
+    "views": "HTTP 403: Resource not accessible by integration",
+    "clones": "HTTP 403: Resource not accessible by integration",
+    "referrers": "HTTP 403: Resource not accessible by integration",
+    "paths": "HTTP 403: Resource not accessible by integration"
+  },
+  "repo_stats": {
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": 0
+  }
+}
