@@ -35,7 +35,10 @@
     "linux.prefs.showVPN": "Show VPN in Status Panel",
     "linux.prefs.hideSystemIndicators.description": "Status Trio already shows Wi‑Fi, volume and battery, so the top bar stays uncluttered.",
     "linux.prefs.controlCenterGlyph.description": "Replaces the Quick Settings icons with a Control Center glyph.",
-    "linux.prefs.about.description": "Wi‑Fi, battery and volume in one tidy top bar status icon. A GNOME Shell port of the macOS app Status Trio."
+    "linux.prefs.about.description": "Wi‑Fi, battery and volume in one tidy top bar status icon. A GNOME Shell port of the macOS app Status Trio.",
+    "linux.battery.powerSource": "Power Source",
+    "linux.battery.powerAdapter": "Power Adapter",
+    "linux.battery.onBattery": "Battery"
   },
   "zh-Hans": {
     "linux.battery.energy": "当前电量",
@@ -73,7 +76,10 @@
     "linux.prefs.showVPN": "在状态面板中显示 VPN",
     "linux.prefs.hideSystemIndicators.description": "Wi‑Fi、音量和电池已由 Status Trio 显示，隐藏后顶栏更简洁。",
     "linux.prefs.controlCenterGlyph.description": "把快速设置入口的一排图标换成控制中心图标。",
-    "linux.prefs.about.description": "将 Wi‑Fi、电池和音量整合为一个简洁顶栏状态图标。macOS 应用 Status Trio 的 GNOME Shell 移植版。"
+    "linux.prefs.about.description": "将 Wi‑Fi、电池和音量整合为一个简洁顶栏状态图标。macOS 应用 Status Trio 的 GNOME Shell 移植版。",
+    "linux.battery.powerSource": "电源",
+    "linux.battery.powerAdapter": "电源适配器",
+    "linux.battery.onBattery": "电池"
   },
   "zh-Hant": {
     "linux.battery.energy": "目前電量",
@@ -102,6 +108,9 @@
     "linux.prefs.port": "lingyired 的 macOS 應用程式的 GNOME Shell 移植版。",
     "linux.prefs.topBarIcon": "頂欄圖示",
     "linux.prefs.chargingEffect": "頂欄充電動效",
-    "linux.prefs.showVPN": "在狀態面板中顯示 VPN"
+    "linux.prefs.showVPN": "在狀態面板中顯示 VPN",
+    "linux.battery.powerSource": "電源",
+    "linux.battery.powerAdapter": "電源轉換器",
+    "linux.battery.onBattery": "電池"
   }
 }

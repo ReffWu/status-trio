@@ -12,7 +12,7 @@ import St from 'gi://St';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 import {Symbol} from './symbols.js';
-import {CHECKBOX_SIZE, paintCheckbox} from './controls.js';
+import {SWITCH_SIZE, paintSwitch} from './controls.js';
 import {t} from './l10n.js';
 import {bluetoothSymbolFor} from './model.js';
 import {typeName} from './gtype.js';
@@ -651,12 +651,25 @@ function detailRows(rows) {
     return list;
 }
 
-/** The regular NSButton checkbox, painted like the preferences' one. */
-const CheckBox = GObject.registerClass({GTypeName: typeName('CheckBox')},
-class CheckBox extends St.DrawingArea {
-    _init(checked) {
-        super._init({y_align: Clutter.ActorAlign.CENTER});
-        this._checked = checked;
+/**
+ * NSSwitch, painted like the preferences' one. A click slides the knob over
+ * 150 ms and then reports the new state; the page rebuilds once the system
+ * confirms it.
+ */
+const MacSwitch = GObject.registerClass({GTypeName: typeName('MacSwitch')},
+class MacSwitch extends St.DrawingArea {
+    _init(active, onToggle, accessibleName) {
+        super._init({y_align: Clutter.ActorAlign.CENTER, reactive: true, can_focus: true,
+            track_hover: true, accessible_name: accessibleName});
+        this._active = active;
+        this._t = active ? 1 : 0;
+        this._onToggle = onToggle;
+        this._anim = 0;
+        this.connect('destroy', () => {
+            if (this._anim)
+                GLib.source_remove(this._anim);
+            this._anim = 0;
+        });
     }
 
     _scale() {
@@ -664,13 +677,45 @@ class CheckBox extends St.DrawingArea {
     }
 
     vfunc_get_preferred_width(_forHeight) {
-        const s = Math.ceil(CHECKBOX_SIZE * this._scale());
-        return [s, s];
+        const w = Math.ceil(SWITCH_SIZE[0] * this._scale());
+        return [w, w];
     }
 
     vfunc_get_preferred_height(_forWidth) {
-        const s = Math.ceil(CHECKBOX_SIZE * this._scale());
-        return [s, s];
+        const h = Math.ceil(SWITCH_SIZE[1] * this._scale());
+        return [h, h];
+    }
+
+    vfunc_button_release_event() {
+        this._toggle();
+        return Clutter.EVENT_STOP;
+    }
+
+    vfunc_key_press_event(event) {
+        const key = event.get_key_symbol();
+        if (key !== Clutter.KEY_space && key !== Clutter.KEY_Return)
+            return Clutter.EVENT_PROPAGATE;
+        this._toggle();
+        return Clutter.EVENT_STOP;
+    }
+
+    _toggle() {
+        if (this._anim)
+            return;
+        this._active = !this._active;
+        const from = this._t, to = this._active ? 1 : 0;
+        const start = GLib.get_monotonic_time();
+        this._anim = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 16, () => {
+            const k = Math.min(1, (GLib.get_monotonic_time() - start) / 150000);
+            const e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+            this._t = from + (to - from) * e;
+            this.queue_repaint();
+            if (k < 1)
+                return GLib.SOURCE_CONTINUE;
+            this._anim = 0;
+            this._onToggle(this._active);
+            return GLib.SOURCE_REMOVE;
+        });
     }
 
     vfunc_repaint() {
@@ -681,7 +726,7 @@ class CheckBox extends St.DrawingArea {
         // The panel's label colour tells light from dark.
         const fg = this.get_theme_node().get_foreground_color();
         cr.scale(k, k);
-        paintCheckbox(cr, this._checked, fg.red + fg.green + fg.blue > 3 * 128);
+        paintSwitch(cr, this._t, fg.red + fg.green + fg.blue > 3 * 128);
         cr.$dispose();
     }
 });
@@ -743,9 +788,13 @@ class BatteryPage {
         const panel = this.panel;
         const {battery: b, batteryInfo: i, profiles} = panel.model;
         this.actor.destroy_all_children();
-        this.actor.add_child(backRow(panel, t('battery.details.title')));
+        // The macOS battery menu shows the charge at the end of its title row.
+        const level = b.isPresent ? [label(`${Math.round(b.percentage)}%`, 'st-headline st-mono-digits')] : [];
+        this.actor.add_child(backRow(panel, t('battery.details.title'), level));
+        // Like the macOS battery menu: name the power source, and give a time
+        // only while one is running out or filling up.
         const remaining = b.isCharging ? timeToFull(i.timeToFull)
-            : !i.onBattery ? t('battery.state.connectedToPower')
+            : !i.onBattery ? null
                 : i.timeToEmpty ? formatDuration(i.timeToEmpty) : t('battery.details.collecting');
         const watts = i.rate ? `${i.rate.toFixed(1)} W` : null;
         this.actor.add_child(detailRows([
@@ -754,6 +803,7 @@ class BatteryPage {
             i.health !== null && i.health < 80 ? 'caution' : null],
             [t('battery.details.maxCapacity'), i.health === null ? null : `${i.health}%`],
             [t('battery.details.cycles'), i.cycles],
+            [t('linux.battery.powerSource'), t(i.onBattery ? 'linux.battery.onBattery' : 'linux.battery.powerAdapter')],
             [t('battery.details.remaining'), b.isPresent ? remaining : null],
             [t(b.isCharging ? 'battery.details.charging' : 'battery.details.discharging'), watts],
             [t('battery.details.voltage'), i.voltage ? `${i.voltage.toFixed(2)} V` : null],
@@ -805,6 +855,7 @@ class WifiPage {
         this.panel = panel;
         this.actor = box(true, {style_class: 'st-page-stack', x_expand: true});
         this._showDetails = false;
+        this._showOther = false;
     }
 
     enter() {
@@ -815,16 +866,10 @@ class WifiPage {
         const panel = this.panel, m = panel.model, info = m.networkInfo;
         this.actor.destroy_all_children();
         const refresh = actionButton('arrow.clockwise', 'action', 'st-secondary', () => m.requestScan(), t('wifi.refresh'));
-        this.actor.add_child(backRow(panel, t('wifi.title'), [refresh]));
+        // Like the macOS Wi-Fi menu, the power switch sits in the title row.
+        const power = new MacSwitch(info.wirelessEnabled, on => m.setWirelessEnabled(on), t('wifi.power'));
+        this.actor.add_child(backRow(panel, t('wifi.title'), [refresh, power]));
 
-        // SwiftUI's default Toggle on macOS: a checkbox with its title.
-        const content = box(false, {style_class: 'st-checkbox-row'});
-        content.add_child(new CheckBox(info.wirelessEnabled));
-        content.add_child(label(t('wifi.power'), 'st-body'));
-        const toggle = new St.Button({style_class: 'st-checkbox-button', child: content, can_focus: true,
-            x_align: Clutter.ActorAlign.START, accessible_name: t('wifi.power')});
-        toggle.connect('clicked', () => m.setWirelessEnabled(!info.wirelessEnabled));
-        this.actor.add_child(toggle);
 
         if (info.wirelessEnabled) {
             const sections = box(true, {style_class: 'st-network-sections', x_expand: true});
@@ -832,17 +877,31 @@ class WifiPage {
             const saved = new Set(m.savedSsids ?? []);
             const known = aps.filter(a => a.active || saved.has(a.ssid));
             const other = aps.filter(a => !a.active && !saved.has(a.ssid));
+            // Rows of one group sit as close as the audio output list.
+            const group = () => box(true, {style_class: 'st-device-list', x_expand: true});
             if (known.length) {
                 sections.add_child(sectionTitle(t('wifi.knownNetworks')));
+                const rows = group();
                 for (const ap of known)
-                    sections.add_child(this._networkRow(ap));
+                    rows.add_child(this._networkRow(ap));
+                sections.add_child(rows);
                 if (known.some(a => a.active))
                     sections.add_child(this._details());
             }
             if (other.length) {
-                sections.add_child(sectionTitle(t('wifi.otherNetworks')));
-                for (const ap of other.slice(0, 12))
-                    sections.add_child(this._networkRow(ap));
+                // The macOS Wi-Fi menu folds other networks away until asked;
+                // with no known network in range there is nothing else to show.
+                const open = this._showOther || !known.length;
+                if (known.length)
+                    sections.add_child(this._otherHeader(open));
+                else
+                    sections.add_child(sectionTitle(t('wifi.otherNetworks')));
+                if (open) {
+                    const rows = group();
+                    for (const ap of other.slice(0, 12))
+                        rows.add_child(this._networkRow(ap));
+                    sections.add_child(rows);
+                }
             }
             if (!aps.length)
                 sections.add_child(label(t('wifi.scanning'), 'st-caption st-secondary'));
@@ -852,18 +911,30 @@ class WifiPage {
         this.actor.add_child(linkButton(t('wifi.action.openSettings'), () => openSettingsPanel(panel.button, 'wifi')));
     }
 
+    _otherHeader(open) {
+        const content = box(false, {x_expand: true});
+        content.add_child(sectionTitle(t('wifi.otherNetworks')));
+        content.add_child(spacer());
+        content.add_child(new Symbol({symbol: open ? 'chevron.down' : 'chevron.right', style: 'caption',
+            style_class: 'st-secondary'}));
+        const b = new St.Button({style_class: 'st-network-row st-disclosure', child: content, x_expand: true,
+            can_focus: true, accessible_name: t('wifi.otherNetworks')});
+        b.connect('clicked', () => {
+            this._showOther = !open;
+            this.sync();
+        });
+        return b;
+    }
+
+    /** macOS Wi-Fi menu row: the signal sits in a round badge, accent when joined. */
     _networkRow(ap) {
-        const content = box(false, {style_class: 'st-network-content', x_expand: true});
-        const lead = new Symbol({symbol: ap.active ? 'checkmark' : 'wifi', style: 'action',
-            style_class: ap.active ? 'st-tint-accent' : 'st-secondary'});
-        content.add_child(new St.Bin({style_class: 'st-network-slot', child: lead}));
-        content.add_child(label(ap.ssid, 'st-body', {x_expand: true}));
+        const content = box(false, {style_class: 'st-device-content', x_expand: true});
+        content.add_child(badge(wifiSymbol('connected', ap.strength), 'device', ap.active));
+        content.add_child(label(ap.ssid, `st-body${ap.active ? ' st-semibold' : ''}`, {x_expand: true}));
         if (ap.secure)
             content.add_child(new St.Bin({style_class: 'st-network-slot',
                 child: new Symbol({symbol: 'lock.fill', style: 'caption', style_class: 'st-secondary'})}));
-        content.add_child(new St.Bin({style_class: 'st-network-slot',
-            child: new Symbol({symbol: wifiSymbol('connected', ap.strength), style: 'signal', style_class: 'st-secondary'})}));
-        const b = new St.Button({style_class: 'st-network-row', child: content, x_expand: true, can_focus: true,
+        const b = new St.Button({style_class: 'st-device-row', child: content, x_expand: true, can_focus: true,
             accessible_name: ap.ssid});
         b.connect('clicked', () => {
             if (!ap.active) {

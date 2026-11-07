@@ -179,11 +179,12 @@ TEMPLATE = """\
 .st-network-sections {{ spacing: 10px; }}
 .st-network-content {{ spacing: 10px; }}
 .st-network-slot {{ width: 16px; height: 16px; }}
+.st-mono-digits {{ font-feature-settings: "tnum"; }}
+.st-disclosure {{ padding: 3px 0; }}
 .st-network-row:hover, .st-device-row:hover {{ border-radius: 6px; background-color: {hover}; }}
-.st-wifi-details {{ spacing: 5px; padding-left: 26px; }}
+.st-wifi-details {{ spacing: 5px; padding-left: 34px; }}
 
-.st-checkbox-button {{ padding: 0; }}
-.st-checkbox-row {{ spacing: 5px; }}
+
 
 /* PowerModePickerRow: hand-built segmented control. */
 .st-power-modes {{ spacing: 4px; }}

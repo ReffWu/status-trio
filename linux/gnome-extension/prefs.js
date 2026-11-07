@@ -177,10 +177,7 @@ class SettingsWindow {
         while ((child = this._sidebar.get_first_child()))
             this._sidebar.remove(child);
 
-        // Window controls sit where macOS puts the traffic lights.
-        const controls = new Gtk.WindowControls({side: Gtk.PackType.START,
-            decoration_layout: 'close,minimize,maximize:', valign: Gtk.Align.CENTER});
-        const head = new Gtk.WindowHandle({child: K.append(K.box(false, 0, ['st-sidebar-head']), controls)});
+        const head = new Gtk.WindowHandle({child: K.append(K.box(false, 0, ['st-sidebar-head']), K.trafficLights())});
 
         const list = K.box(true, 4, ['st-sidebar-list']);
         for (const s of SECTIONS)

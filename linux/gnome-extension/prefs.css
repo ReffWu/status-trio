@@ -66,7 +66,6 @@ window.st-prefs-window.dark > contents { background-color: #1e1e1e; }
 /* --- Sidebar (SettingsSidebarMetrics) ------------------------------------- */
 .st-prefs .st-sidebar { background-color: var(--sidebar); }
 .st-prefs .st-sidebar-head { min-height: 42px; }
-.st-prefs .st-sidebar-head windowcontrols { margin: 0 0 0 12px; }
 .st-prefs .st-sidebar-list { padding: 0 10px 6px 10px; }
 .st-prefs .st-sidebar-pinned { padding: 6px 10px 8px 10px; }
 .st-prefs .st-sidebar-rule { min-height: 1px; margin: 0 18px; background-color: var(--hairline); opacity: 0.6; }

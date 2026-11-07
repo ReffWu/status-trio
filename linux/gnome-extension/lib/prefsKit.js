@@ -221,6 +221,73 @@ export function macCheck() {
     return new Toggle(CHECKBOX_SIZE, CHECKBOX_SIZE, (cr, _w, _h, t, dark) => paintCheckbox(cr, t > 0.5, dark), false);
 }
 
+/**
+ * The window's traffic lights. Geometry from AppKit (macOS 26): 14 pt
+ * buttons 23 pt apart, the first centred 16 pt from the top-left corner.
+ * Like System Settings, close and minimise work and zoom is disabled.
+ */
+export function trafficLights() {
+    const row = new Gtk.Box({spacing: 9, valign: Gtk.Align.START, halign: Gtk.Align.START,
+        margin_top: 9, margin_start: 9});
+    let hovered = false;
+    const kinds = [
+        ['close', [1, 95 / 255, 87 / 255], [224 / 255, 68 / 255, 62 / 255]],
+        ['minimize', [254 / 255, 188 / 255, 46 / 255], [222 / 255, 161 / 255, 35 / 255]],
+        ['zoom', null, null],
+    ];
+    const buttons = kinds.map(([kind, fill, ring]) => {
+        const area = new Gtk.DrawingArea({content_width: 14, content_height: 14});
+        area.set_draw_func((a, cr, w, h) => {
+            const dark = isDark(a);
+            const enabled = fill !== null;
+            cr.arc(w / 2, h / 2, 6.75, 0, 2 * Math.PI);
+            cr.setSourceRGBA(...(enabled ? [...fill, 1] : dark ? [1, 1, 1, 0.12] : [0, 0, 0, 0.06]));
+            cr.fillPreserve();
+            cr.setLineWidth(0.5);
+            cr.setSourceRGBA(...(enabled ? [...ring, 1] : dark ? [1, 1, 1, 0.10] : [0, 0, 0, 0.18]));
+            cr.stroke();
+            if (!enabled || !hovered) {
+                cr.$dispose();
+                return;
+            }
+            cr.setSourceRGBA(0, 0, 0, 0.5);
+            cr.setLineWidth(1.1);
+            cr.setLineCap(Cairo.LineCap.ROUND);
+            const c = w / 2, d = 2.6;
+            if (kind === 'close') {
+                cr.moveTo(c - d, c - d); cr.lineTo(c + d, c + d);
+                cr.moveTo(c + d, c - d); cr.lineTo(c - d, c + d);
+            } else {
+                cr.moveTo(c - d - 0.6, c); cr.lineTo(c + d + 0.6, c);
+            }
+            cr.stroke();
+            cr.$dispose();
+        });
+        if (fill) {
+            const click = new Gtk.GestureClick();
+            click.connect('released', () => {
+                const win = area.get_root();
+                if (kind === 'close')
+                    win.close();
+                else
+                    win.minimize();
+            });
+            area.add_controller(click);
+        }
+        row.append(area);
+        return area;
+    });
+    const motion = new Gtk.EventControllerMotion();
+    const hover = v => {
+        hovered = v;
+        buttons.forEach(b => b.queue_draw());
+    };
+    motion.connect('enter', () => hover(true));
+    motion.connect('leave', () => hover(false));
+    row.add_controller(motion);
+    return row;
+}
+
 // --- Settings bindings ---------------------------------------------------------
 
 /** Calls `fn` now and whenever one of `keys` changes; disconnects with `widget`. */
