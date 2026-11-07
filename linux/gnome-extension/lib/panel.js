@@ -785,7 +785,8 @@ class WifiPage {
         toggle.add_child(label(t('wifi.power'), 'st-body', {x_expand: true}));
         const sw = new St.Button({style_class: `st-switch${info.wirelessEnabled ? ' checked' : ''}`,
             can_focus: true, accessible_name: t('wifi.power'),
-            child: new St.Widget({style_class: 'st-switch-knob', x_align: info.wirelessEnabled
+            // Clutter only honours a child's START/END alignment while it expands.
+            child: new St.Widget({style_class: 'st-switch-knob', x_expand: true, x_align: info.wirelessEnabled
                 ? Clutter.ActorAlign.END : Clutter.ActorAlign.START})});
         sw.connect('clicked', () => m.setWirelessEnabled(!info.wirelessEnabled));
         toggle.add_child(sw);
