@@ -333,10 +333,9 @@ export class StatusModel extends Signals.EventEmitter {
                 state = 'temporary';
             else if (!online && connection === 'wifi')
                 state = 'noInternet';
-            else if (wifiDev.get_metered?.() === NM.Metered.GUESS_YES &&
-                     ac?.get_ip4_config?.()?.get_gateway?.() === '172.20.10.1')
-                // NetworkManager only guesses "metered"; an iPhone's Personal
-                // Hotspot always serves 172.20.10.0/28 from 172.20.10.1.
+            else if (wifiDev.get_metered?.() === NM.Metered.GUESS_YES)
+                // Phone hotspots announce themselves as metered (Android via
+                // DHCP, iPhone via its vendor element).
                 state = 'hotspot';
             else
                 state = 'connected';

@@ -38,7 +38,8 @@
     "linux.prefs.about.description": "Wi‑Fi, battery and volume in one tidy top bar status icon. A GNOME Shell port of the macOS app Status Trio.",
     "linux.battery.powerSource": "Power Source",
     "linux.battery.powerAdapter": "Power Adapter",
-    "linux.battery.onBattery": "Battery"
+    "linux.battery.onBattery": "Battery",
+    "linux.wifi.subtitle.hotspot": "Using Personal Hotspot"
   },
   "zh-Hans": {
     "linux.battery.energy": "当前电量",
@@ -79,7 +80,8 @@
     "linux.prefs.about.description": "将 Wi‑Fi、电池和音量整合为一个简洁顶栏状态图标。macOS 应用 Status Trio 的 GNOME Shell 移植版。",
     "linux.battery.powerSource": "电源",
     "linux.battery.powerAdapter": "电源适配器",
-    "linux.battery.onBattery": "电池"
+    "linux.battery.onBattery": "电池",
+    "linux.wifi.subtitle.hotspot": "使用个人热点"
   },
   "zh-Hant": {
     "linux.battery.energy": "目前電量",
@@ -111,6 +113,7 @@
     "linux.prefs.showVPN": "在狀態面板中顯示 VPN",
     "linux.battery.powerSource": "電源",
     "linux.battery.powerAdapter": "電源轉換器",
-    "linux.battery.onBattery": "電池"
+    "linux.battery.onBattery": "電池",
+    "linux.wifi.subtitle.hotspot": "使用個人熱點"
   }
 }

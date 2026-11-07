@@ -382,11 +382,11 @@ class NetworkSection {
         this.panel = panel;
         this.row = new SummaryRow({onActivate: () => this._activate()});
         this.actor = this.row.actor;
-        this._power = this.row.add(actionButton('power', 'action', 'st-secondary',
-            () => panel.model.setWirelessEnabled(!panel.model.networkInfo.wirelessEnabled), t('wifi.power.turnOff')));
         this._chevron = this.row.add(actionButton('chevron.right', 'chev', 'st-tertiary', () => this._activate()));
         this._gear = this.row.add(actionButton('gearshape', 'action', 'st-secondary gear',
             () => openSettingsPanel(panel.button, this._wired ? 'network' : 'wifi')));
+        // Power switches always close a row, as in Control Center.
+        this._power = this.row.add(new MacSwitch(false, v => panel.model.setWirelessEnabled(v), t('wifi.power')));
     }
 
     _activate() {
@@ -409,8 +409,12 @@ class NetworkSection {
             if (named) {
                 const measure = [info.band?.replace(' GHz', '') && t('wifi.summary.band', info.band.replace(' GHz', '')),
                     info.dbm !== null && info.dbm !== undefined ? t('wifi.summary.signal', info.dbm) : null].filter(Boolean);
+                // Only an iPhone serves 172.20.10.0/28; other phones get the
+                // plain "personal hotspot" wording instead of "iPhone".
+                const key = state === 'hotspot' && info.gateway !== '172.20.10.1'
+                    ? 'linux.wifi.subtitle.hotspot' : WIFI_SUBTITLE[state];
                 const base = state === 'connected' ? measure.join(sep) || t('wifi.subtitle.connected')
-                    : [t(WIFI_SUBTITLE[state]), ...measure].join(sep);
+                    : [t(key), ...measure].join(sep);
                 subtitle = [info.address, base].filter(Boolean).join(sep);
             } else {
                 subtitle = t(WIFI_SUBTITLE[state] ?? 'wifi.subtitle.unavailable');
@@ -420,8 +424,7 @@ class NetworkSection {
         }
         const on = !!info.wirelessEnabled;
         this._power.visible = !this._wired && this.panel.settings.get_boolean('wifi-power-control');
-        this._power.glyph.style_class = on ? 'st-tint-accent' : '';
-        this._power.accessible_name = t(on ? 'wifi.power.turnOff' : 'wifi.power.turnOn');
+        this._power.active = on;
         this._gear.accessible_name = t(this._wired ? 'ethernet.action.openSettings' : 'wifi.action.openSettings');
     }
 }
@@ -431,7 +434,7 @@ class VpnSection {
         this.panel = panel;
         this.row = new SummaryRow();
         this.actor = this.row.actor;
-        this._power = this.row.add(actionButton('power', 'action', 'st-secondary', () => panel.model.toggleVpn()));
+        this._power = this.row.add(new MacSwitch(false, () => panel.model.toggleVpn(), t('vpn.title')));
     }
 
     get visible() {
@@ -448,8 +451,7 @@ class VpnSection {
             tint: connected ? 'positive' : connecting ? 'caution' : 'secondary', title: t('vpn.title'),
             subtitle: connecting ? t('vpn.power.changing')
                 : [t(connected ? 'vpn.value.connected' : 'vpn.value.disconnected'), name].filter(Boolean).join(' · ')});
-        this._power.glyph.style_class = connected ? 'st-tint-accent' : '';
-        this._power.accessible_name = t(connected ? 'vpn.power.turnOff' : 'vpn.power.turnOn');
+        this._power.active = connected || connecting;
     }
 }
 
@@ -551,12 +553,9 @@ class BluetoothSection {
         this.actor.add_child(this.row.actor);
         // Bluetooth uses the system template glyph, not an SF Symbol.
         this.row._glyph.style_name = 'template';
-        this._power = this.row.add(actionButton('power', 'action', 'st-secondary', () => {
-            const bt = panel.model.bluetooth;
-            panel.model.setBluetoothPowered(!bt.powered);
-        }));
         this.row.add(actionButton('gearshape', 'action', 'st-secondary gear',
             () => openSettingsPanel(panel.button, 'bluetooth'), t('bluetooth.action.openSettings')));
+        this._power = this.row.add(new MacSwitch(false, v => panel.model.setBluetoothPowered(v), t('bluetooth.title')));
         this._list = box(true, {style_class: 'st-device-list', x_expand: true});
         this.actor.add_child(this._list);
         this._pending = new Map();
@@ -572,8 +571,7 @@ class BluetoothSection {
         this.row.set({symbol: 'bluetooth', title: t('bluetooth.title'),
             subtitle: !bt.powered ? t('wifi.value.off')
                 : connected.length ? connected.map(d => d.name).join(', ') : t('vpn.value.disconnected')});
-        this._power.glyph.style_class = bt.powered ? 'st-tint-accent' : '';
-        this._power.accessible_name = t(bt.powered ? 'bluetooth.power.turnOff' : 'bluetooth.power.turnOn');
+        this._power.active = bt.powered;
 
         this._list.destroy_all_children();
         const limit = this.panel.settings.get_int('max-bluetooth-devices');
@@ -670,6 +668,15 @@ class MacSwitch extends St.DrawingArea {
                 GLib.source_remove(this._anim);
             this._anim = 0;
         });
+    }
+
+    /** Follows the system state; a slide in progress finishes first. */
+    set active(v) {
+        if (this._anim || v === this._active)
+            return;
+        this._active = v;
+        this._t = v ? 1 : 0;
+        this.queue_repaint();
     }
 
     _scale() {
