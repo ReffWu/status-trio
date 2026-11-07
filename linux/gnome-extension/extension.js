@@ -8,6 +8,7 @@ import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
 import {loadIconAssets} from './lib/renderer.js';
 import {loadPanelSymbols, unloadPanelSymbols, Symbol} from './lib/symbols.js';
+import {loadControls} from './lib/controls.js';
 import {loadStrings, t} from './lib/l10n.js';
 import {StatusModel} from './lib/model.js';
 import {TrioButton} from './lib/indicator.js';
@@ -21,6 +22,7 @@ export default class StatusTrioExtension extends Extension {
         const dir = this.path;
         loadStrings(`${dir}/locale`);
         loadPanelSymbols(`${dir}/assets/panel`);
+        loadControls(dir);
         const readText = path => new TextDecoder().decode(GLib.file_get_contents(path)[1]);
         this._assets = {icon: loadIconAssets(`${dir}/assets/icon`, readText)};
         this._settings = this.getSettings();

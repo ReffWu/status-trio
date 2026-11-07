@@ -44,7 +44,6 @@ PALETTES = {
         'badge': 'rgba(0, 0, 0, 0.094)',
         'hover': 'rgba(0, 0, 0, 0.05)',
         'control_bg': 'rgba(0, 0, 0, 0.06)',
-        'switch_off': 'rgba(0, 0, 0, 0.12)',
         'accent': '#007aff',
         'positive': 'rgb(52, 199, 89)',
         'caution': 'rgb(255, 204, 0)',
@@ -66,7 +65,6 @@ PALETTES = {
         'badge': 'rgba(255, 255, 255, 0.107)',
         'hover': 'rgba(255, 255, 255, 0.06)',
         'control_bg': 'rgba(255, 255, 255, 0.08)',
-        'switch_off': 'rgba(255, 255, 255, 0.16)',
         'accent': '#007aff',
         'positive': 'rgb(48, 209, 88)',
         'caution': 'rgb(255, 214, 10)',
@@ -184,15 +182,8 @@ TEMPLATE = """\
 .st-network-row:hover, .st-device-row:hover {{ border-radius: 6px; background-color: {hover}; }}
 .st-wifi-details {{ spacing: 5px; padding-left: 26px; }}
 
-.st-toggle-row {{ spacing: 10px; }}
-.st-switch {{
-  width: 32px; height: 18px; border-radius: 9px; padding: 1px;
-  background-color: {switch_off};
-  transition-duration: 150ms;
-}}
-.st-switch.checked {{ background-color: {accent}; }}
-.st-switch-knob {{ width: 16px; height: 16px; border-radius: 8px; background-color: #ffffff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25); }}
+.st-checkbox-button {{ padding: 0; }}
+.st-checkbox-row {{ spacing: 5px; }}
 
 /* PowerModePickerRow: hand-built segmented control. */
 .st-power-modes {{ spacing: 4px; }}

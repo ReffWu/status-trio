@@ -12,6 +12,7 @@ import St from 'gi://St';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 import {Symbol} from './symbols.js';
+import {CHECKBOX_SIZE, paintCheckbox} from './controls.js';
 import {t} from './l10n.js';
 import {bluetoothSymbolFor} from './model.js';
 import {typeName} from './gtype.js';
@@ -650,6 +651,41 @@ function detailRows(rows) {
     return list;
 }
 
+/** The regular NSButton checkbox, painted like the preferences' one. */
+const CheckBox = GObject.registerClass({GTypeName: typeName('CheckBox')},
+class CheckBox extends St.DrawingArea {
+    _init(checked) {
+        super._init({y_align: Clutter.ActorAlign.CENTER});
+        this._checked = checked;
+    }
+
+    _scale() {
+        return St.ThemeContext.get_for_stage(global.stage).scale_factor;
+    }
+
+    vfunc_get_preferred_width(_forHeight) {
+        const s = Math.ceil(CHECKBOX_SIZE * this._scale());
+        return [s, s];
+    }
+
+    vfunc_get_preferred_height(_forWidth) {
+        const s = Math.ceil(CHECKBOX_SIZE * this._scale());
+        return [s, s];
+    }
+
+    vfunc_repaint() {
+        const cr = this.get_context();
+        const [w] = this.get_surface_size();
+        const [aw] = this.get_size();
+        const k = (aw > 0 ? w / aw : 1) * this._scale();
+        // The panel's label colour tells light from dark.
+        const fg = this.get_theme_node().get_foreground_color();
+        cr.scale(k, k);
+        paintCheckbox(cr, this._checked, fg.red + fg.green + fg.blue > 3 * 128);
+        cr.$dispose();
+    }
+});
+
 /**
  * Lays its one child out `dx`/`dy` past its own box on every side, like
  * SwiftUI's negative padding (St has no negative margins).
@@ -781,15 +817,13 @@ class WifiPage {
         const refresh = actionButton('arrow.clockwise', 'action', 'st-secondary', () => m.requestScan(), t('wifi.refresh'));
         this.actor.add_child(backRow(panel, t('wifi.title'), [refresh]));
 
-        const toggle = box(false, {style_class: 'st-toggle-row', x_expand: true});
-        toggle.add_child(label(t('wifi.power'), 'st-body', {x_expand: true}));
-        const sw = new St.Button({style_class: `st-switch${info.wirelessEnabled ? ' checked' : ''}`,
-            can_focus: true, accessible_name: t('wifi.power'),
-            // Clutter only honours a child's START/END alignment while it expands.
-            child: new St.Widget({style_class: 'st-switch-knob', x_expand: true, x_align: info.wirelessEnabled
-                ? Clutter.ActorAlign.END : Clutter.ActorAlign.START})});
-        sw.connect('clicked', () => m.setWirelessEnabled(!info.wirelessEnabled));
-        toggle.add_child(sw);
+        // SwiftUI's default Toggle on macOS: a checkbox with its title.
+        const content = box(false, {style_class: 'st-checkbox-row'});
+        content.add_child(new CheckBox(info.wirelessEnabled));
+        content.add_child(label(t('wifi.power'), 'st-body'));
+        const toggle = new St.Button({style_class: 'st-checkbox-button', child: content, can_focus: true,
+            x_align: Clutter.ActorAlign.START, accessible_name: t('wifi.power')});
+        toggle.connect('clicked', () => m.setWirelessEnabled(!info.wirelessEnabled));
         this.actor.add_child(toggle);
 
         if (info.wirelessEnabled) {

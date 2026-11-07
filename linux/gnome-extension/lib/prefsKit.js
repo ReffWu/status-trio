@@ -8,6 +8,7 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
+import {ACCENT, CHECKBOX_SIZE, SWITCH_SIZE, loadControls, paintCheckbox, paintSwitch} from './controls.js';
 import {typeName} from './gtype.js';
 
 const ASSET_SCALE = 3;
@@ -16,6 +17,7 @@ let _masks = {};
 const _surfaces = new Map();
 
 export function initKit(dir) {
+    loadControls(dir);
     _dir = `${dir}/assets/prefs`;
     const [, bytes] = GLib.file_get_contents(`${_dir}/masks.json`);
     _masks = JSON.parse(new TextDecoder().decode(bytes));
@@ -126,8 +128,6 @@ function roundedRect(cr, x, y, w, h, r) {
 }
 export {roundedRect};
 
-const ACCENT = {light: [0, 122 / 255, 1], dark: [10 / 255, 132 / 255, 1]};
-
 function isDark(widget) {
     return !!widget.get_root?.()?.has_css_class?.('dark');
 }
@@ -143,8 +143,9 @@ const Toggle = GObject.registerClass({
         active: GObject.ParamSpec.boolean('active', null, null, GObject.ParamFlags.READWRITE, false),
     },
 }, class Toggle extends Gtk.DrawingArea {
-    constructor(w, h, draw) {
+    constructor(w, h, draw, animated = true) {
         super({content_width: w, content_height: h, valign: CENTER, halign: CENTER, focusable: true});
+        this._animated = animated;
         this._active = false;
         this._t = 0;
         this._anim = 0;
@@ -191,7 +192,7 @@ const Toggle = GObject.registerClass({
     _animate() {
         this._stop();
         const target = this._active ? 1 : 0;
-        if (!this.get_mapped()) {
+        if (!this._animated || !this.get_mapped()) {
             this._t = target;
             this.queue_draw();
             return;
@@ -210,50 +211,14 @@ const Toggle = GObject.registerClass({
     }
 });
 
-/** NSSwitch (macOS 26): 44 x 20 track, 26 x 16 pill knob. */
+/** NSSwitch at .small, as SettingsToggleRow uses it (see controls.js). */
 export function macSwitch() {
-    return new Toggle(44, 20, (cr, w, h, t, dark) => {
-        const off = dark ? [1, 1, 1, 0.16] : [0, 0, 0, 0.09];
-        const on = [...ACCENT[dark ? 'dark' : 'light'], 1];
-        const c = off.map((v, i) => v + (on[i] - v) * t);
-        roundedRect(cr, 0, 0, w, h, h / 2);
-        cr.setSourceRGBA(...c);
-        cr.fill();
-        const kw = 26, kh = h - 4;
-        const x = 2 + (w - kw - 4) * t;
-        roundedRect(cr, x, 2.5, kw, kh, kh / 2);
-        cr.setSourceRGBA(0, 0, 0, 0.10);
-        cr.fill();
-        roundedRect(cr, x, 2, kw, kh, kh / 2);
-        cr.setSourceRGBA(1, 1, 1, 1);
-        cr.fillPreserve();
-        cr.setLineWidth(0.5);
-        cr.setSourceRGBA(0, 0, 0, 0.08);
-        cr.stroke();
-    });
+    return new Toggle(...SWITCH_SIZE, (cr, _w, _h, t, dark) => paintSwitch(cr, t, dark));
 }
 
-/** NSButton checkbox: 14 pt rounded square, white check on the accent. */
+/** The regular NSButton checkbox of the panel-order list. */
 export function macCheck() {
-    const toggle = new Toggle(14, 14, (cr, w, h, t, dark) => {
-        roundedRect(cr, 0.5, 0.5, w - 1, h - 1, 3.5);
-        cr.setSourceRGBA(...(dark ? [1, 1, 1, 0.08] : [1, 1, 1, 1]));
-        cr.fillPreserve();
-        cr.setLineWidth(1);
-        cr.setSourceRGBA(...(dark ? [1, 1, 1, 0.22] : [0, 0, 0, 0.22]));
-        cr.stroke();
-        if (t <= 0)
-            return;
-        roundedRect(cr, 0, 0, w, h, 3.5);
-        cr.setSourceRGBA(...ACCENT[dark ? 'dark' : 'light'], t);
-        cr.fill();
-        const m = _masks['mask-checkmark-9-bold'];
-        cr.translate((w - m.width) / 2, (h - m.height) / 2);
-        cr.scale(1 / ASSET_SCALE, 1 / ASSET_SCALE);
-        cr.setSourceRGBA(1, 1, 1, t);
-        cr.maskSurface(surface('mask-checkmark-9-bold.png'), 0, 0);
-    });
-    return toggle;
+    return new Toggle(CHECKBOX_SIZE, CHECKBOX_SIZE, (cr, _w, _h, t, dark) => paintCheckbox(cr, t > 0.5, dark), false);
 }
 
 // --- Settings bindings ---------------------------------------------------------
