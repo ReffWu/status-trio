@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="status-trio">
+  <enum id="org.gnome.shell.extensions.status-trio.ConnectedIndicator">
+    <value nick="plug" value="0"/>
+    <value nick="bolt" value="1"/>
+    <value nick="percentage" value="2"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.status-trio.RingStroke">
+    <value nick="light" value="0"/>
+    <value nick="regular" value="1"/>
+    <value nick="bold" value="2"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.status-trio.CenterSource">
+    <value nick="network" value="0"/>
+    <value nick="bluetoothDevice" value="1"/>
+    <value nick="inputSource" value="2"/>
+    <value nick="batteryPercentage" value="3"/>
+    <value nick="chargingStatus" value="4"/>
+    <value nick="power" value="5"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.status-trio.VolumeStyle">
+    <value nick="dots" value="0"/>
+    <value nick="arc" value="1"/>
+  </enum>
+  <enum id="org.gnome.shell.extensions.status-trio.BluetoothIconColor">
+    <value nick="primary" value="0"/>
+    <value nick="blue" value="1"/>
+  </enum>
+
+  <schema id="org.gnome.shell.extensions.status-trio" path="/org/gnome/shell/extensions/status-trio/">
+    <!-- App icon -->
+    <key name="icon-size" type="i">
+      <range min="16" max="40"/>
+      <default>24</default>
+      <summary>Icon size in the top bar (logical pixels)</summary>
+    </key>
+    <key name="ring-stroke" enum="org.gnome.shell.extensions.status-trio.RingStroke">
+      <default>'regular'</default>
+      <summary>Ring and volume stroke weight</summary>
+    </key>
+
+    <!-- Battery -->
+    <key name="show-percentage" type="b"><default>true</default><summary>Show the battery percentage in the ring</summary></key>
+    <key name="show-charging-indicator" type="b"><default>true</default><summary>Show the bolt or plug while on power</summary></key>
+    <key name="connected-indicator" enum="org.gnome.shell.extensions.status-trio.ConnectedIndicator">
+      <default>'plug'</default>
+      <summary>What the ring gap shows while plugged in but not charging</summary>
+    </key>
+    <key name="charging-effect" type="b"><default>true</default><summary>Animate the ring while charging</summary></key>
+    <key name="bolt-heartbeat" type="b"><default>true</default><summary>Pulse the bolt as the charge highlight passes</summary></key>
+    <key name="split-gap-progress" type="b"><default>false</default><summary>Spread 0–100 % across the visible arc only</summary></key>
+    <key name="status-colors" type="b"><default>true</default><summary>Colour the ring for charging, low battery and power modes</summary></key>
+    <key name="critical-threshold" type="i">
+      <range min="0" max="100"/><default>20</default>
+      <summary>Low battery threshold (%)</summary>
+    </key>
+    <key name="full-threshold" type="i">
+      <range min="50" max="100"/><default>100</default>
+      <summary>Level at which the ring counts as full (for charge limits)</summary>
+    </key>
+    <key name="battery-text-scale" type="d">
+      <range min="1.0" max="3.0"/><default>1.8</default>
+      <summary>Percentage text size</summary>
+    </key>
+
+    <!-- Middle icon -->
+    <key name="center-source" enum="org.gnome.shell.extensions.status-trio.CenterSource">
+      <default>'network'</default>
+      <summary>What the middle of the icon shows</summary>
+    </key>
+    <key name="prioritize-network-errors" type="b"><default>true</default><summary>Show the network when it is down, whatever the middle icon is</summary></key>
+    <key name="wifi-icon-for-ethernet" type="b"><default>false</default><summary>Use the Wi-Fi glyph for wired connections</summary></key>
+    <key name="wifi-icon-for-hotspot" type="b"><default>false</default><summary>Use the Wi-Fi glyph for phone hotspots</summary></key>
+    <key name="wifi-icon-for-temporary" type="b"><default>false</default><summary>Use the Wi-Fi glyph for ad-hoc networks</summary></key>
+    <key name="wifi-icon-for-sharing" type="b"><default>false</default><summary>Use the Wi-Fi glyph while sharing the connection</summary></key>
+    <key name="wifi-scale" type="d">
+      <range min="0.8" max="2.2"/><default>1.6</default>
+      <summary>Middle icon size</summary>
+    </key>
+
+    <!-- Volume & Bluetooth -->
+    <key name="volume-style" enum="org.gnome.shell.extensions.status-trio.VolumeStyle">
+      <default>'dots'</default>
+      <summary>Volume indicator style</summary>
+    </key>
+    <key name="bluetooth-volume-color" type="b"><default>true</default><summary>Turn the volume indicator blue for Bluetooth audio</summary></key>
+    <key name="bluetooth-icon-color" enum="org.gnome.shell.extensions.status-trio.BluetoothIconColor">
+      <default>'primary'</default>
+      <summary>Bluetooth device glyph colour in the middle slot</summary>
+    </key>
+    <key name="bluetooth-scale" type="d">
+      <range min="0.8" max="2.2"/><default>1.6</default>
+      <summary>Bluetooth device glyph size</summary>
+    </key>
+    <key name="scroll-adjusts-volume" type="b"><default>true</default><summary>Scroll on the icon or panel to change the volume</summary></key>
+
+    <!-- Top bar -->
+    <key name="hide-system-indicators" type="b"><default>true</default><summary>Hide GNOME's own Wi-Fi, volume and battery icons</summary></key>
+    <key name="control-center-glyph" type="b"><default>true</default><summary>Show a Control Center glyph for Quick Settings</summary></key>
+
+    <!-- Panel -->
+    <key name="wifi-power-control" type="b"><default>true</default><summary>Show a Wi-Fi power button on the network row</summary></key>
+    <key name="panel-sections" type="as">
+      <default>['battery', 'network', 'vpn', 'bluetooth', 'volume']</default>
+      <summary>Popup sections, in order</summary>
+    </key>
+    <key name="panel-order" type="as">
+      <default>['battery', 'network', 'vpn', 'bluetooth', 'volume', 'inputSource']</default>
+      <summary>Order of all popup sections in the preferences list, shown or not</summary>
+    </key>
+    <key name="max-bluetooth-devices" type="i">
+      <range min="1" max="20"/><default>5</default>
+      <summary>Bluetooth devices listed before "Show more"</summary>
+    </key>
+    <key name="max-output-devices" type="i">
+      <range min="1" max="20"/><default>5</default>
+      <summary>Audio outputs listed before "Show more"</summary>
+    </key>
+  </schema>
+</schemalist>

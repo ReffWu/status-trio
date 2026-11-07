@@ -1,0 +1,98 @@
+{
+  "mask-antenna.radiowaves.left.and.right-13-regular" : {
+    "height" : 14,
+    "width" : 16
+  },
+  "mask-apple.logo-12-medium" : {
+    "height" : 14,
+    "width" : 11
+  },
+  "mask-at-11-regular" : {
+    "height" : 14,
+    "width" : 14
+  },
+  "mask-battery.100percent-13-regular" : {
+    "height" : 11,
+    "width" : 23
+  },
+  "mask-checkmark-9-bold" : {
+    "height" : 10,
+    "width" : 11
+  },
+  "mask-chevron.down-8-bold" : {
+    "height" : 7,
+    "width" : 10
+  },
+  "mask-chevron.down-10-semibold" : {
+    "height" : 8,
+    "width" : 11
+  },
+  "mask-chevron.down-11-medium" : {
+    "height" : 8,
+    "width" : 12
+  },
+  "mask-chevron.up-8-bold" : {
+    "height" : 7,
+    "width" : 10
+  },
+  "mask-chevron.up.chevron.down-9-bold" : {
+    "height" : 12,
+    "width" : 9
+  },
+  "mask-exclamationmark.circle-11-regular" : {
+    "height" : 13,
+    "width" : 13
+  },
+  "mask-globe-11-regular" : {
+    "height" : 13,
+    "width" : 13
+  },
+  "mask-info.circle-11-regular" : {
+    "height" : 13,
+    "width" : 13
+  },
+  "mask-keyboard-13-regular" : {
+    "height" : 13,
+    "width" : 20
+  },
+  "mask-line.3.horizontal-11-regular" : {
+    "height" : 8,
+    "width" : 13
+  },
+  "mask-link-11-regular" : {
+    "height" : 15,
+    "width" : 15
+  },
+  "mask-lock.shield-13-regular" : {
+    "height" : 15,
+    "width" : 15
+  },
+  "mask-moon.fill-10-regular" : {
+    "height" : 12,
+    "width" : 12
+  },
+  "mask-person.circle-11-regular" : {
+    "height" : 13,
+    "width" : 13
+  },
+  "mask-speaker.wave.2-13-regular" : {
+    "height" : 14,
+    "width" : 19
+  },
+  "mask-star.fill-11-regular" : {
+    "height" : 14,
+    "width" : 15
+  },
+  "mask-sun.max.fill-10-regular" : {
+    "height" : 13,
+    "width" : 13
+  },
+  "mask-switch.2-10-regular" : {
+    "height" : 12,
+    "width" : 12
+  },
+  "mask-wifi-13-regular" : {
+    "height" : 13,
+    "width" : 17
+  }
+}

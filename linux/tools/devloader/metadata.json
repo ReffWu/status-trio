@@ -1,0 +1,6 @@
+{
+  "uuid": "status-trio-devloader@reffwu",
+  "name": "Status Trio dev loader",
+  "description": "Development only: reloads status-trio@reffwu from a fresh directory over D-Bus, so code changes apply without logging out.",
+  "shell-version": ["51"]
+}

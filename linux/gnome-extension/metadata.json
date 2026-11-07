@@ -1,0 +1,10 @@
+{
+  "uuid": "status-trio@reffwu",
+  "name": "Status Trio",
+  "description": "Battery, network and volume in one top bar icon, ported from the macOS app Status Trio.",
+  "shell-version": ["51"],
+  "settings-schema": "org.gnome.shell.extensions.status-trio",
+  "session-modes": ["user", "unlock-dialog"],
+  "url": "https://github.com/lingyired/status-trio",
+  "version-name": "1.9.4-linux"
+}

@@ -1,0 +1,2562 @@
+{
+  "airpods.gen3~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "airpods.gen3~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "airpods.gen3~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 15
+  },
+  "airpods.gen3~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "airpods.gen3~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "airpods.gen3~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 23
+  },
+  "airpods.gen3~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 20
+  },
+  "airpods.gen4~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 18
+  },
+  "airpods.gen4~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "airpods.gen4~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "airpods.gen4~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "airpods.gen4~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "airpods.gen4~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 22
+  },
+  "airpods.gen4~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 19
+  },
+  "airpods.max~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "airpods.max~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "airpods.max~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "airpods.max~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 17
+  },
+  "airpods.max~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "airpods.max~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 20
+  },
+  "airpods.max~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 18
+  },
+  "airpods.pro~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "airpods.pro~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 15
+  },
+  "airpods.pro~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 15
+  },
+  "airpods.pro~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 20
+  },
+  "airpods.pro~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 18
+  },
+  "airpods.pro~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 22
+  },
+  "airpods.pro~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 20
+  },
+  "airpods~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "airpods~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "airpods~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "airpods~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "airpods~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "airpods~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 19
+  },
+  "airpods~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "applewatch~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 13
+  },
+  "applewatch~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 10
+  },
+  "applewatch~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 10
+  },
+  "applewatch~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "applewatch~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 12
+  },
+  "applewatch~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 16
+  },
+  "applewatch~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "arrow.clockwise~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "arrow.clockwise~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "arrow.clockwise~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "arrow.clockwise~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "arrow.clockwise~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 13
+  },
+  "arrow.clockwise~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 17
+  },
+  "arrow.clockwise~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 15
+  },
+  "arrow.triangle.2.circlepath~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "arrow.triangle.2.circlepath~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "arrow.triangle.2.circlepath~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "arrow.triangle.2.circlepath~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "arrow.triangle.2.circlepath~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "arrow.triangle.2.circlepath~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "arrow.triangle.2.circlepath~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.0~action" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 22
+  },
+  "battery.0~caption" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.0~chev" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 18
+  },
+  "battery.0~device" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 23
+  },
+  "battery.0~footer" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 21
+  },
+  "battery.0~row" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 27
+  },
+  "battery.0~signal" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 24
+  },
+  "battery.25~action" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 22
+  },
+  "battery.25~caption" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.25~chev" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 18
+  },
+  "battery.25~device" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 23
+  },
+  "battery.25~footer" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 21
+  },
+  "battery.25~row" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 27
+  },
+  "battery.25~signal" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 24
+  },
+  "battery.50~action" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 22
+  },
+  "battery.50~caption" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.50~chev" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 18
+  },
+  "battery.50~device" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 23
+  },
+  "battery.50~footer" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 21
+  },
+  "battery.50~row" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 27
+  },
+  "battery.50~signal" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 24
+  },
+  "battery.75~action" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 22
+  },
+  "battery.75~caption" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.75~chev" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 18
+  },
+  "battery.75~device" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 23
+  },
+  "battery.75~footer" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 21
+  },
+  "battery.75~row" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 27
+  },
+  "battery.75~signal" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 24
+  },
+  "battery.100.bolt~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 22
+  },
+  "battery.100.bolt~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.100.bolt~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 18
+  },
+  "battery.100.bolt~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 23
+  },
+  "battery.100.bolt~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 21
+  },
+  "battery.100.bolt~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 27
+  },
+  "battery.100.bolt~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 24
+  },
+  "battery.100~action" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 22
+  },
+  "battery.100~caption" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 17
+  },
+  "battery.100~chev" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 18
+  },
+  "battery.100~device" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 23
+  },
+  "battery.100~footer" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 21
+  },
+  "battery.100~row" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 27
+  },
+  "battery.100~signal" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 24
+  },
+  "beats.headphones~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "beats.headphones~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 12
+  },
+  "beats.headphones~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 12
+  },
+  "beats.headphones~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "beats.headphones~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "beats.headphones~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "beats.headphones~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 17
+  },
+  "bluetooth~template" : {
+    "h" : 21,
+    "px" : 3,
+    "w" : 16
+  },
+  "bolt.batteryblock.fill~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "bolt.batteryblock.fill~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "bolt.batteryblock.fill~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "bolt.batteryblock.fill~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "bolt.batteryblock.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "bolt.batteryblock.fill~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 22
+  },
+  "bolt.batteryblock.fill~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 20
+  },
+  "bolt.fill~action" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 13
+  },
+  "bolt.fill~caption" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 10
+  },
+  "bolt.fill~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "bolt.fill~device" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 13
+  },
+  "bolt.fill~footer" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 12
+  },
+  "bolt.fill~row" : {
+    "h" : 21,
+    "px" : 3,
+    "w" : 15
+  },
+  "bolt.fill~signal" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 14
+  },
+  "cable.connector~action" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 8
+  },
+  "cable.connector~caption" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 6
+  },
+  "cable.connector~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 6
+  },
+  "cable.connector~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 8
+  },
+  "cable.connector~footer" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 7
+  },
+  "cable.connector~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 9
+  },
+  "cable.connector~signal" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 8
+  },
+  "checkmark.circle.fill~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "checkmark.circle.fill~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "checkmark.circle.fill~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "checkmark.circle.fill~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "checkmark.circle.fill~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "checkmark.circle.fill~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "checkmark.circle.fill~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "checkmark~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "checkmark~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 11
+  },
+  "checkmark~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 11
+  },
+  "checkmark~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "checkmark~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "checkmark~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "checkmark~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "chevron.backward~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 10
+  },
+  "chevron.backward~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 8
+  },
+  "chevron.backward~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 8
+  },
+  "chevron.backward~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.backward~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 9
+  },
+  "chevron.backward~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 12
+  },
+  "chevron.backward~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.down~action" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 15
+  },
+  "chevron.down~caption" : {
+    "h" : 7,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.down~chev" : {
+    "h" : 8,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.down~device" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 15
+  },
+  "chevron.down~footer" : {
+    "h" : 8,
+    "px" : 3,
+    "w" : 14
+  },
+  "chevron.down~row" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 17
+  },
+  "chevron.down~signal" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 15
+  },
+  "chevron.right~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 10
+  },
+  "chevron.right~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 8
+  },
+  "chevron.right~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 8
+  },
+  "chevron.right~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.right~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 9
+  },
+  "chevron.right~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 12
+  },
+  "chevron.right~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.up~action" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 15
+  },
+  "chevron.up~caption" : {
+    "h" : 7,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.up~chev" : {
+    "h" : 8,
+    "px" : 3,
+    "w" : 11
+  },
+  "chevron.up~device" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 15
+  },
+  "chevron.up~footer" : {
+    "h" : 8,
+    "px" : 3,
+    "w" : 14
+  },
+  "chevron.up~row" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 17
+  },
+  "chevron.up~signal" : {
+    "h" : 9,
+    "px" : 3,
+    "w" : 15
+  },
+  "computermouse.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 12
+  },
+  "computermouse.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 9
+  },
+  "computermouse.fill~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 10
+  },
+  "computermouse.fill~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 13
+  },
+  "computermouse.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 12
+  },
+  "computermouse.fill~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 15
+  },
+  "computermouse.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 13
+  },
+  "display~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 19
+  },
+  "display~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 14
+  },
+  "display~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 15
+  },
+  "display~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 19
+  },
+  "display~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 17
+  },
+  "display~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 22
+  },
+  "display~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "dot.radiowaves.left.and.right~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "dot.radiowaves.left.and.right~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 15
+  },
+  "dot.radiowaves.left.and.right~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 16
+  },
+  "dot.radiowaves.left.and.right~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 20
+  },
+  "dot.radiowaves.left.and.right~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "dot.radiowaves.left.and.right~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 23
+  },
+  "dot.radiowaves.left.and.right~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 20
+  },
+  "earbuds~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 20
+  },
+  "earbuds~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 16
+  },
+  "earbuds~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "earbuds~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 22
+  },
+  "earbuds~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "earbuds~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 25
+  },
+  "earbuds~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 22
+  },
+  "ellipsis.circle~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "ellipsis.circle~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "ellipsis.circle~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "ellipsis.circle~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "ellipsis.circle~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "ellipsis.circle~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "ellipsis.circle~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "exclamationmark.circle~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "exclamationmark.circle~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "exclamationmark.circle~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "exclamationmark.circle~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "exclamationmark.circle~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "exclamationmark.circle~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "exclamationmark.circle~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "exclamationmark.triangle.fill~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "exclamationmark.triangle.fill~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "exclamationmark.triangle.fill~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "exclamationmark.triangle.fill~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "exclamationmark.triangle.fill~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "exclamationmark.triangle.fill~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 19
+  },
+  "exclamationmark.triangle.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 18
+  },
+  "gamecontroller.fill~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 22
+  },
+  "gamecontroller.fill~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 17
+  },
+  "gamecontroller.fill~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "gamecontroller.fill~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 22
+  },
+  "gamecontroller.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 20
+  },
+  "gamecontroller.fill~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 26
+  },
+  "gamecontroller.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 23
+  },
+  "gauge~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "gauge~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "gauge~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "gauge~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "gauge~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "gauge~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "gauge~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "gearshape~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "gearshape~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "gearshape~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "gearshape~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "gearshape~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "gearshape~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "gearshape~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 17
+  },
+  "globe~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "globe~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "globe~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "globe~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "globe~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "globe~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "globe~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "headphones~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "headphones~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 12
+  },
+  "headphones~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "headphones~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "headphones~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "headphones~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 20
+  },
+  "headphones~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 17
+  },
+  "hifispeaker.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 13
+  },
+  "hifispeaker.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 10
+  },
+  "hifispeaker.fill~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 10
+  },
+  "hifispeaker.fill~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "hifispeaker.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 12
+  },
+  "hifispeaker.fill~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 16
+  },
+  "hifispeaker.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "homepod.mini.fill~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 16
+  },
+  "homepod.mini.fill~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 12
+  },
+  "homepod.mini.fill~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "homepod.mini.fill~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 17
+  },
+  "homepod.mini.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 15
+  },
+  "homepod.mini.fill~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 19
+  },
+  "homepod.mini.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "info.circle~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "info.circle~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "info.circle~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "info.circle~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "info.circle~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "info.circle~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "info.circle~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "iphone~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "iphone~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "iphone~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "iphone~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "iphone~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 12
+  },
+  "iphone~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 15
+  },
+  "iphone~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "keyboard~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 19
+  },
+  "keyboard~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 15
+  },
+  "keyboard~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 15
+  },
+  "keyboard~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 20
+  },
+  "keyboard~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 18
+  },
+  "keyboard~row" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 23
+  },
+  "keyboard~signal" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 21
+  },
+  "laptopcomputer~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 22
+  },
+  "laptopcomputer~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 17
+  },
+  "laptopcomputer~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 17
+  },
+  "laptopcomputer~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 22
+  },
+  "laptopcomputer~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 20
+  },
+  "laptopcomputer~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 26
+  },
+  "laptopcomputer~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 23
+  },
+  "leaf.fill~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 16
+  },
+  "leaf.fill~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "leaf.fill~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "leaf.fill~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "leaf.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 15
+  },
+  "leaf.fill~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 20
+  },
+  "leaf.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "leaf~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 16
+  },
+  "leaf~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "leaf~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "leaf~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "leaf~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "leaf~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 19
+  },
+  "leaf~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "lock.fill~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 13
+  },
+  "lock.fill~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 10
+  },
+  "lock.fill~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 10
+  },
+  "lock.fill~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "lock.fill~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "lock.fill~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 15
+  },
+  "lock.fill~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "lock.shield.fill~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "lock.shield.fill~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 10
+  },
+  "lock.shield.fill~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 11
+  },
+  "lock.shield.fill~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "lock.shield.fill~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 13
+  },
+  "lock.shield.fill~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 17
+  },
+  "lock.shield.fill~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 15
+  },
+  "lock.shield~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "lock.shield~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 11
+  },
+  "lock.shield~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 11
+  },
+  "lock.shield~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "lock.shield~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 13
+  },
+  "lock.shield~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 17
+  },
+  "lock.shield~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 15
+  },
+  "magicmouse.fill~action" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 11
+  },
+  "magicmouse.fill~caption" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 9
+  },
+  "magicmouse.fill~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 9
+  },
+  "magicmouse.fill~device" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 12
+  },
+  "magicmouse.fill~footer" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 11
+  },
+  "magicmouse.fill~row" : {
+    "h" : 21,
+    "px" : 3,
+    "w" : 14
+  },
+  "magicmouse.fill~signal" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 12
+  },
+  "mic.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "mic.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 10
+  },
+  "mic.fill~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "mic.fill~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 15
+  },
+  "mic.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 13
+  },
+  "mic.fill~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 16
+  },
+  "mic.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "mic.slash.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "mic.slash.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 10
+  },
+  "mic.slash.fill~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 11
+  },
+  "mic.slash.fill~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "mic.slash.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 13
+  },
+  "mic.slash.fill~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 16
+  },
+  "mic.slash.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 14
+  },
+  "network~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "network~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "network~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "network~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "network~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "network~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "network~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "personalhotspot~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "personalhotspot~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 14
+  },
+  "personalhotspot~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 15
+  },
+  "personalhotspot~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 19
+  },
+  "personalhotspot~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "personalhotspot~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 22
+  },
+  "personalhotspot~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "power~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 15
+  },
+  "power~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 12
+  },
+  "power~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "power~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "power~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "power~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 19
+  },
+  "power~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 16
+  },
+  "powerplug.fill~action" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 19
+  },
+  "powerplug.fill~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 15
+  },
+  "powerplug.fill~chev" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 15
+  },
+  "powerplug.fill~device" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 19
+  },
+  "powerplug.fill~footer" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 18
+  },
+  "powerplug.fill~row" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 23
+  },
+  "powerplug.fill~signal" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 21
+  },
+  "speaker.fill~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "speaker.fill~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 10
+  },
+  "speaker.fill~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 11
+  },
+  "speaker.fill~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "speaker.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 12
+  },
+  "speaker.fill~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 16
+  },
+  "speaker.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "speaker.slash.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 14
+  },
+  "speaker.slash.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "speaker.slash.fill~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "speaker.slash.fill~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 15
+  },
+  "speaker.slash.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 13
+  },
+  "speaker.slash.fill~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 17
+  },
+  "speaker.slash.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 15
+  },
+  "speaker.wave.1.fill~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 16
+  },
+  "speaker.wave.1.fill~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 12
+  },
+  "speaker.wave.1.fill~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 13
+  },
+  "speaker.wave.1.fill~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 16
+  },
+  "speaker.wave.1.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 15
+  },
+  "speaker.wave.1.fill~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 19
+  },
+  "speaker.wave.1.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "speaker.wave.2.fill~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "speaker.wave.2.fill~caption" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "speaker.wave.2.fill~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 15
+  },
+  "speaker.wave.2.fill~device" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 20
+  },
+  "speaker.wave.2.fill~footer" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "speaker.wave.2.fill~row" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 22
+  },
+  "speaker.wave.2.fill~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 20
+  },
+  "speaker.wave.3.fill~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 22
+  },
+  "speaker.wave.3.fill~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "speaker.wave.3.fill~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "speaker.wave.3.fill~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 23
+  },
+  "speaker.wave.3.fill~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 20
+  },
+  "speaker.wave.3.fill~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 26
+  },
+  "speaker.wave.3.fill~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 23
+  },
+  "star.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "star.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "star.fill~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "star.fill~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "star.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "star.fill~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 20
+  },
+  "star.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 19
+  },
+  "sun.max.fill~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "sun.max.fill~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 13
+  },
+  "sun.max.fill~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 14
+  },
+  "sun.max.fill~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 17
+  },
+  "sun.max.fill~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 15
+  },
+  "sun.max.fill~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 20
+  },
+  "sun.max.fill~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 17
+  },
+  "switch.2~action" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 16
+  },
+  "switch.2~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "switch.2~chev" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 12
+  },
+  "switch.2~device" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "switch.2~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 15
+  },
+  "switch.2~row" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 19
+  },
+  "switch.2~signal" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "thermometer.medium~action" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 10
+  },
+  "thermometer.medium~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 8
+  },
+  "thermometer.medium~chev" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 8
+  },
+  "thermometer.medium~device" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 11
+  },
+  "thermometer.medium~footer" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 10
+  },
+  "thermometer.medium~row" : {
+    "h" : 20,
+    "px" : 3,
+    "w" : 12
+  },
+  "thermometer.medium~signal" : {
+    "h" : 18,
+    "px" : 3,
+    "w" : 11
+  },
+  "tv~action" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 19
+  },
+  "tv~caption" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 15
+  },
+  "tv~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 15
+  },
+  "tv~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "tv~footer" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 18
+  },
+  "tv~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 23
+  },
+  "tv~signal" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 21
+  },
+  "waveform~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 15
+  },
+  "waveform~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 11
+  },
+  "waveform~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 12
+  },
+  "waveform~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 16
+  },
+  "waveform~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 14
+  },
+  "waveform~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 18
+  },
+  "waveform~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 16
+  },
+  "wifi-25~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi-25~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-25~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-25~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-25~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-25~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi-25~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "wifi-33~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi-33~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-33~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-33~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-33~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-33~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi-33~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "wifi-67~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi-67~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-67~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-67~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-67~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-67~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi-67~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "wifi-100~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi-100~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-100~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi-100~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-100~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi-100~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi-100~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "wifi.exclamationmark~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi.exclamationmark~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi.exclamationmark~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi.exclamationmark~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi.exclamationmark~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi.exclamationmark~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi.exclamationmark~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 19
+  },
+  "wifi.slash~action" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi.slash~caption" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi.slash~chev" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi.slash~device" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi.slash~footer" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi.slash~row" : {
+    "h" : 19,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi.slash~signal" : {
+    "h" : 17,
+    "px" : 3,
+    "w" : 19
+  },
+  "wifi~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 18
+  },
+  "wifi~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 14
+  },
+  "wifi~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 17
+  },
+  "wifi~row" : {
+    "h" : 16,
+    "px" : 3,
+    "w" : 20
+  },
+  "wifi~signal" : {
+    "h" : 14,
+    "px" : 3,
+    "w" : 19
+  },
+  "xmark~action" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "xmark~caption" : {
+    "h" : 10,
+    "px" : 3,
+    "w" : 10
+  },
+  "xmark~chev" : {
+    "h" : 11,
+    "px" : 3,
+    "w" : 11
+  },
+  "xmark~device" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  },
+  "xmark~footer" : {
+    "h" : 12,
+    "px" : 3,
+    "w" : 13
+  },
+  "xmark~row" : {
+    "h" : 15,
+    "px" : 3,
+    "w" : 16
+  },
+  "xmark~signal" : {
+    "h" : 13,
+    "px" : 3,
+    "w" : 14
+  }
+}
