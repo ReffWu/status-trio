@@ -49,13 +49,17 @@ export function symbolSize(symbol, style) {
  * Draws `symbol` in `style` centred in its allocation, the way SwiftUI centres
  * `Image(systemName:)` in a frame. Without an explicit width/height the actor
  * takes the symbol's natural layout box, like an unframed SwiftUI Image.
+ * With `ink: true` the glyph's ink is centred instead: SF Symbols' layout boxes
+ * are not symmetric about the glyph (Wi-Fi's ink is 1.33 pt from the left edge
+ * and 2 pt from the right), which shows inside a circle.
  */
 export const Symbol = GObject.registerClass({GTypeName: typeName('Symbol')},
 class Symbol extends St.DrawingArea {
-    _init({symbol = '', style = 'action', ...params} = {}) {
+    _init({symbol = '', style = 'action', ink = false, ...params} = {}) {
         super._init({y_align: Clutter.ActorAlign.CENTER, ...params});
         this._symbol = symbol;
         this._style = style;
+        this._ink = ink;
     }
 
     get symbol() {
@@ -104,7 +108,11 @@ class Symbol extends St.DrawingArea {
             const k = (aw > 0 ? w / aw : 1) * this._scale();
             const dw = e.meta.w * k, dh = e.meta.h * k;
             const c = this.get_theme_node().get_foreground_color();
-            cr.translate((w - dw) / 2, (h - dh) / 2);
+            const m = e.meta;
+            if (this._ink && m.iw)
+                cr.translate(w / 2 - (m.ix + m.iw / 2) * k, h / 2 - (m.iy + m.ih / 2) * k);
+            else
+                cr.translate((w - dw) / 2, (h - dh) / 2);
             cr.scale(k / e.meta.px, k / e.meta.px);
             cr.setSourceRGBA(c.red / 255, c.green / 255, c.blue / 255, c.alpha / 255);
             const pattern = new Cairo.SurfacePattern(e.surface);

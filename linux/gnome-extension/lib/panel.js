@@ -96,8 +96,10 @@ function actionButton(symbol, style, cls, onClick, tooltip = '') {
 
 /** A 24 pt round badge with a glyph, as used by output and Bluetooth rows. */
 function badge(symbol, style, selected) {
+    // The glyph fills the circle and centres its ink in it.
     const b = new St.Bin({style_class: `st-badge${selected ? ' selected' : ''}`,
-        child: new Symbol({symbol, style, x_align: Clutter.ActorAlign.CENTER}),
+        child: new Symbol({symbol, style, ink: true, x_expand: true, y_expand: true,
+            x_align: Clutter.ActorAlign.FILL, y_align: Clutter.ActorAlign.FILL}),
         y_align: Clutter.ActorAlign.CENTER});
     return b;
 }

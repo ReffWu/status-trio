@@ -153,10 +153,31 @@ final class LinuxAssetExportTests: XCTestCase {
         NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: false)
         image.draw(in: CGRect(origin: .zero, size: image.size))
         NSGraphicsContext.restoreGraphicsState()
-        // Full layout box in points (SwiftUI centres a symbol on this box).
+        // Full layout box in points (SwiftUI centres a symbol on this box), plus
+        // the ink box: SF Symbols' layout boxes are not symmetric about the
+        // glyph, so a glyph inside a circle is centred on its ink instead.
         let cg = try XCTUnwrap(context.makeImage())
         try png(cg, to: "\(dir)/\(file).png")
-        manifest[file] = ["w": Double(image.size.width), "h": Double(image.size.height), "px": Double(scale)]
+        var entry = ["w": Double(image.size.width), "h": Double(image.size.height), "px": Double(scale)]
+        if let ink = inkBox(context) {
+            entry["ix"] = Double(ink.minX / scale); entry["iy"] = Double(ink.minY / scale)
+            entry["iw"] = Double(ink.width / scale); entry["ih"] = Double(ink.height / scale)
+        }
+        manifest[file] = entry
+    }
+
+    /// Pixels with any coverage, top-left origin (bitmap row 0 is the top).
+    private func inkBox(_ context: CGContext) -> CGRect? {
+        guard let data = context.data else { return nil }
+        let bytes = data.assumingMemoryBound(to: UInt8.self)
+        var minX = context.width, minY = context.height, maxX = -1, maxY = -1
+        for y in 0..<context.height {
+            for x in 0..<context.width where bytes[y * context.bytesPerRow + x * 4 + 3] > 0 {
+                minX = min(minX, x); maxX = max(maxX, x); minY = min(minY, y); maxY = max(maxY, y)
+            }
+        }
+        guard minX <= maxX else { return nil }
+        return CGRect(x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1)
     }
 
     private func exportImage(_ image: NSImage, file: String, dir: String) throws {
