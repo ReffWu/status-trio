@@ -123,23 +123,3 @@
 .st-menu-item { padding: 4px 10px; border-radius: 5px; font-size: 13px; color: rgba(0, 0, 0, 0.85); }
 .st-menu-item:hover, .st-menu-item:focus { background-color: #007aff; color: #ffffff; }
 .st-menu-separator { height: 1px; margin: 5px 10px; background-color: rgba(0, 0, 0, 0.10); }
-
-/* See-through top bar in light mode (macOS light menu bar). */
-#panel.status-trio-clear-panel #panelLeft .panel-button,
-#panel.status-trio-clear-panel #panelCenter .panel-button,
-#panel.status-trio-clear-panel #panelRight .panel-button {
-  color: rgba(0, 0, 0, 0.85);
-  text-shadow: none !important;
-}
-#panel.status-trio-clear-panel #panelLeft .panel-button.screen-recording-indicator,
-#panel.status-trio-clear-panel #panelLeft .panel-button.screen-sharing-indicator,
-#panel.status-trio-clear-panel #panelCenter .panel-button.screen-recording-indicator,
-#panel.status-trio-clear-panel #panelCenter .panel-button.screen-sharing-indicator,
-#panel.status-trio-clear-panel #panelRight .panel-button.screen-recording-indicator,
-#panel.status-trio-clear-panel #panelRight .panel-button.screen-sharing-indicator {
-  color: #fafafb;
-}
-#panel.status-trio-clear-panel, #panel.status-trio-clear-panel:hover { text-shadow: none !important; }
-#panel.status-trio-clear-panel .system-status-icon,
-#panel.status-trio-clear-panel .app-menu-icon > StIcon,
-#panel.status-trio-clear-panel .popup-menu-arrow { icon-shadow: none !important; }

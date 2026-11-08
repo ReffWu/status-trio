@@ -9,27 +9,6 @@ alphas over the window background.
 """
 import pathlib
 
-# A see-through top bar in light mode reads like the macOS light menu bar.
-# extension.js adds .status-trio-clear-panel only while the bar's own
-# background is transparent (outside the overview and lock screen). Two ids
-# outrank extensions such as transparent-top-bar that force white text.
-_BOXES = ['#panelLeft', '#panelCenter', '#panelRight']
-CLEAR_PANEL_LIGHT = '''
-/* See-through top bar in light mode (macOS light menu bar). */
-''' + ',\n'.join(f'#panel.status-trio-clear-panel {b} .panel-button' for b in _BOXES) + ''' {
-  color: rgba(0, 0, 0, 0.85);
-  text-shadow: none !important;
-}
-''' + ',\n'.join(f'#panel.status-trio-clear-panel {b} .panel-button.{k}'
-                 for b in _BOXES for k in ('screen-recording-indicator', 'screen-sharing-indicator')) + ''' {
-  color: #fafafb;
-}
-#panel.status-trio-clear-panel, #panel.status-trio-clear-panel:hover { text-shadow: none !important; }
-#panel.status-trio-clear-panel .system-status-icon,
-#panel.status-trio-clear-panel .app-menu-icon > StIcon,
-#panel.status-trio-clear-panel .popup-menu-arrow { icon-shadow: none !important; }
-'''
-
 PALETTES = {
     'light': {
         'bg': '#ffffff',
@@ -50,7 +29,6 @@ PALETTES = {
         'critical': 'rgb(255, 59, 48)',
         'menu_bg': 'rgba(246, 246, 246, 0.98)',
         'shadow': 'rgba(0, 0, 0, 0.18)',
-        'clear_panel': CLEAR_PANEL_LIGHT,
     },
     'dark': {
         'bg': '#1e1e1e',
@@ -71,7 +49,6 @@ PALETTES = {
         'critical': 'rgb(255, 69, 58)',
         'menu_bg': 'rgba(44, 44, 46, 0.98)',
         'shadow': 'rgba(0, 0, 0, 0.45)',
-        'clear_panel': '',
     },
 }
 
@@ -202,7 +179,7 @@ TEMPLATE = """\
 .st-menu-item {{ padding: 4px 10px; border-radius: 5px; font-size: 13px; color: {primary}; }}
 .st-menu-item:hover, .st-menu-item:focus {{ background-color: {accent}; color: #ffffff; }}
 .st-menu-separator {{ height: 1px; margin: 5px 10px; background-color: {divider}; }}
-{clear_panel}"""
+"""
 
 out = pathlib.Path(__file__).resolve().parents[1] / 'gnome-extension'
 for mode, palette in PALETTES.items():

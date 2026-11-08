@@ -15,7 +15,6 @@ import {TrioButton} from './lib/indicator.js';
 
 // GNOME's own indicators that the trio replaces in the top bar.
 const REPLACED = ['_network', '_volumeOutput', '_system'];
-const CLEAR_PANEL = 'status-trio-clear-panel';
 
 export default class StatusTrioExtension extends Extension {
     enable() {
@@ -50,22 +49,6 @@ export default class StatusTrioExtension extends Extension {
             }, this);
         }
 
-        // GNOME's panel foreground is always white. When the bar is see-through
-        // (e.g. a transparent-top-bar extension) the light stylesheet tints it
-        // like the macOS light menu bar instead.
-        Main.panel.connectObject('style-changed', () => this._syncClearPanel(), this);
-        Main.overview.connectObject('showing', () => this._syncClearPanel(),
-            'hidden', () => this._syncClearPanel(), this);
-        Main.sessionMode.connectObject('updated', () => this._syncClearPanel(), this);
-        this._syncClearPanel();
-    }
-
-    _syncClearPanel() {
-        const bg = Main.panel.get_theme_node().get_background_color();
-        const clear = bg.alpha < 128 && !Main.overview.visible && !Main.sessionMode.isLocked &&
-            !Main.overview.animationInProgress;
-        if (clear !== Main.panel.has_style_class_name(CLEAR_PANEL))
-            Main.panel[clear ? 'add_style_class_name' : 'remove_style_class_name'](CLEAR_PANEL);
     }
 
     _syncSystemIndicators() {
@@ -105,10 +88,6 @@ export default class StatusTrioExtension extends Extension {
         // trio keeps showing battery state there.
         this._settings?.disconnectObject(this);
         Main.panel.statusArea.quickSettings._indicators?.disconnectObject(this);
-        Main.panel.disconnectObject(this);
-        Main.overview.disconnectObject(this);
-        Main.sessionMode.disconnectObject(this);
-        Main.panel.remove_style_class_name(CLEAR_PANEL);
         this._restoreSystemIndicators();
         this._button?.destroy();
         this._button = null;
